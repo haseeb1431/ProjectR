@@ -206,12 +206,15 @@
                                                 data: additionalData
                                             }
                                         },
-										change: function(e) { //Adding to add the support for the sorting
+										sort: { field: "Id", dir: "desc" },
+										/*change: function(e) { //Adding to add the support for the sorting
+											var __data = this.data();
+											if(
 											if(e.action == 'itemchange'){
-												var data = this.data();
-												console.log(data.length); // displays "77"
+												
+												console.log(data.length);
 											}
-										},
+										},*/
                                         schema: {
                                             data: "Data",
                                             total: "Total",
@@ -225,7 +228,7 @@
                                         pageSize: @(defaultGridPageSize),
                                         serverPaging: true,
                                         serverFiltering: true,
-                                        serverSorting: true
+                                        serverSorting: false,
                                     },
                                     pageable: {
                                         refresh: true,
@@ -237,6 +240,11 @@
                                     },
                                     scrollable: false,
                                     dataBound: onDataBound,
+									sortable: {
+										mode: "single",
+										allowUnsort: false,
+										initialDirection: "desc"
+									},
                                     columns: [
                                         {
                                             field: "Id",
@@ -244,8 +252,8 @@
                                             headerAttributes: { style: "text-align:center" },
                                             attributes: { style: "text-align:center" },
                                             template: "<input type='checkbox' value='#=Id#' class='checkboxGroups'/>",
-                                            width: 50
-                                        },
+                                            width: 50											
+                                        },										
                                         {
                                             field: "PictureThumbnailUrl",
                                             title: "@T("Admin.Catalog.Products.Fields.PictureThumbnailUrl")",
