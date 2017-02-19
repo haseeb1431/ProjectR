@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "";
+}
+@model Nop.Plugin.Widgets.BsLiveChat.Models.ConfigurationModel
+@using Nop.Web.Framework;
+@Html.Action("StoreScopeConfiguration", "Setting", new { area = "Admin" })
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <table class="adminContent">
+        
+       
+        <tr>
+            <td class="adminTitle">
+                @Html.OverrideStoreCheckboxFor(model => model.TrackingScript_OverrideForStore, model => model.TrackingScript, Model.ActiveStoreScopeConfiguration)
+                @Html.NopLabelFor(model => model.TrackingScript):
+            </td>
+            <td class="adminData">
+                @Html.TextAreaFor(model => model.TrackingScript, new { style = "width:600px;height:230px;" })
+                @Html.ValidationMessageFor(model => model.TrackingScript)
+            </td>
+        </tr>
+       
+        <tr>
+            <td colspan="2">
+                <input type="submit" name="save" class="k-button" value="@T("Admin.Common.Save")" />
+            </td>
+        </tr>
+    </table>
+
+}

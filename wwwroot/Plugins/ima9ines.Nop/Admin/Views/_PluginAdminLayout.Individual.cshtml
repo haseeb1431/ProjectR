@@ -1,0 +1,59 @@
+﻿@using ima9ines.Nop.Admin.Models
+@using ima9ines.Nop.Core.Plugins
+@using ima9ines.Nop.CorePlugin
+@using Nop.Web.Framework
+@using Nop.Web.Framework.UI
+@{
+    Layout = "~/Administration/Views/Shared/_AdminLayout.cshtml";
+
+    Html.AddCssFileParts("/Styles/Ima9inesNopAdmin.min.css".GetPluginContentFor());
+
+    // Resources for tags input
+    Html.AppendCssFileParts("~/Administration/Content/tagEditor/jquery.tag-editor.css");
+
+    Html.AppendScriptParts("~/Administration/Scripts/tagEditor/jquery.tag-editor.min.js");
+    Html.AppendScriptParts("~/Administration/Scripts/tagEditor/jquery.caret.min.js");
+
+    string pluginFriendlyName = "ima9ines.Nop".GetPluginDescriptor().FriendlyName;
+}
+<div class="content-header clearfix">
+    <h1 class="pull-left">
+        @T("Admin.Configuration.Plugins.Misc.Configure") - @pluginFriendlyName
+    </h1>
+    <div class="pull-right">&nbsp;</div>
+</div>
+<div class="content">
+    <div class="form-horizontal">
+        <section class="ima9ines-nop-plugin ima9ines-nop-plugin__admin">
+            @Html.Partial("_MainNavBar".GetAdminViewFor())
+            @if (IsSectionDefined("toppane"))
+            {
+                @RenderSection("toppane")
+            }
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-1">
+                        @if (IsSectionDefined("leftpane"))
+                        {
+                            @RenderSection("leftpane")
+                        }
+                    </div>
+                    <div class="col-md-9">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.Action("StoreScopeConfiguration", "Setting", new { area = "Admin" })
+                            @RenderBody()
+                        }
+                    </div>
+                    <div class="col-md-2">
+                        @if (IsSectionDefined("rightpane"))
+                        {
+                            @RenderSection("rightpane")
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

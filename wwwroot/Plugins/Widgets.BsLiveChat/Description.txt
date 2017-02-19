@@ -1,0 +1,9 @@
+Group: Widgets
+FriendlyName: Bs nopStation Live Chat
+SystemName: Widgets.BsLiveChat
+Version: 1.20
+SupportedVersions: 3.80
+Author: Md. Minul Islam Sohel, nop MVP
+DisplayOrder: 1
+FileName: Nop.Plugin.Widgets.BsLiveChat.dll
+Description: 

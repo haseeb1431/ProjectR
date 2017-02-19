@@ -1,0 +1,127 @@
+﻿@using ima9ines.Nop.Admin.Models
+@using ima9ines.Nop.Core.Plugins
+@using ima9ines.Nop.CorePlugin
+@using Nop.Web.Framework
+@using Nop.Web.Framework.UI
+@{
+    PluginLayout pluginLayout = new PluginLayout();
+}
+<div class="container-fluid ima9ines-nop-plugin__navbar">
+    <div class="row">
+        <div class="col-md-3">
+            <a class="pull-left" href="@pluginLayout.NopCommerceProfileUrl" target="_blank">
+                <span class="ima9ines-icon-logo ima9ines-icon--extremeLarge"></span>
+            </a>
+            <div class="btn-group ima9ines-nop-plugin__followUs" role="group">
+                <a class="btn btn-danger btn-lg ima9ines-nop-brand" href="http://ima9ines.com" target="_blank">@T("ima9ines.Nop.Brand")</a>
+                <div class="btn-group btn-group-lg" role="group">
+                    <button type="button" class="btn btn-warning" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@T("ima9ines.Nop.FollowUs")</button>
+                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li>
+                            <a class="clearfix" href="@pluginLayout.NopCommerceProfileUrl" target="_blank">
+                                <span class="ima9ines-icon-logo ima9ines-icon--large ima9ines-icon--background">@T("ima9ines.Nop.NopCommerceProfileText")</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="clearfix" href="@pluginLayout.FacebookUrl" target="_blank">
+                                <span class="ima9ines-icon-social-facebook ima9ines-icon--large ima9ines-icon--background">@T("ima9ines.Nop.FacebookProfileText")</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="clearfix" href="@pluginLayout.TwitterUrl" target="_blank">
+                                <span class="ima9ines-icon-social-twitter ima9ines-icon--large ima9ines-icon--background">@T("ima9ines.Nop.TwitterProfileText")</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="clearfix" href="@pluginLayout.GooglePlusUrl" target="_blank">
+                                <span class="ima9ines-icon-social-google-plus ima9ines-icon--large ima9ines-icon--background">@T("ima9ines.Nop.GooglePlusProfileText")</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="clearfix" href="@pluginLayout.RssUrl" target="_blank">
+                                <span class="ima9ines-icon-rss ima9ines-icon--large ima9ines-icon--background">@T("ima9ines.Nop.RssProfileText")</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="btn-group" role="group">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-danger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@T("ima9ines.Nop.Plugins")</button>
+                    <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="clearfix" href="@pluginLayout.FreePluginsUrl" target="_blank">
+                                <span class="ima9ines-icon-gift ima9ines-icon--large ima9ines-icon--background">@T("ima9ines.Nop.FreePluginsText")</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="clearfix" href="@pluginLayout.ProPluginsUrl" target="_blank">
+                                <span class="ima9ines-icon-basket ima9ines-icon--large ima9ines-icon--background">@T("ima9ines.Nop.ProPluginsText")</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-warning" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@T("ima9ines.Nop.Templates")</button>
+                    <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li>
+                            <a class="clearfix" href="@pluginLayout.FreeTemplatesUrl" target="_blank">
+                                <span class="ima9ines-icon-dashboard ima9ines-icon--large ima9ines-icon--background">@T("ima9ines.Nop.FreeTemplatesText")</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="clearfix" href="@pluginLayout.ProTemplatesUrl" target="_blank">
+                                <span class="ima9ines-icon-dashboard-alt ima9ines-icon--large ima9ines-icon--background">@T("ima9ines.Nop.ProTemplatesText")</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="btn-group pull-right" role="group">
+                @Html.Partial("_UpdatePlugin".GetAdminViewFor())
+                <div class="btn-group" role="group">
+                    <button class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@T("ima9ines.Nop.PluginSettings")</button>
+                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li>
+                            <a class="clearfix" href="@Url.Action("ConfigureMiscPlugin", "Plugin", new { systemName = typeof(Plugin).Assembly.GetName().Name, area = "Admin" })">
+                                <span class="ima9ines-icon-settings ima9ines-icon--large ima9ines-icon--background">@T("ima9ines.Nop.CommonSettings")</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="clearfix" href="@Url.RouteUrl("WidgetZones")">
+                                <span class="ima9ines-icon-layers ima9ines-icon--large ima9ines-icon--background">@T("ima9ines.Nop.WidgetZones")</span>
+                            </a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a class="clearfix" href="#">@T("ima9ines.Nop.LoadDefaultSettings")</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            @Html.Partial("_InstalledPlugins".GetAdminViewFor())
+        </div>
+    </div>
+</div>

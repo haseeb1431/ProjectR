@@ -1,0 +1,22 @@
+﻿@using ima9ines.Nop
+@using ima9ines.Nop.Core.Plugins
+@using ima9ines.Nop.CorePlugin
+@using Nop.Web.Framework
+@{
+    IEnumerable<Tuple<string, string, string>> plugins = Url.GetAllPluginsForSettingsStartsWith(CommonConstants.Ima9ines_Nop_Plugin_SystemName_Prefix);
+}
+<div class="btn-group pull-right ima9ines-nop-plugin__installedPlugins">
+    <button class="btn btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@T("ima9ines.Nop.InstalledPlugins")</button>
+    <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-right scrollable-list">
+        @foreach (var item in plugins)
+        {
+            <li>
+                <a class="clearfix" href="@item.Item1"><img class="pull-left" height="32" src="@item.Item3" width="32" /> @item.Item2</a>
+            </li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,8 @@
+﻿Group: ima9ines
+FriendlyName: ima9ines - Shoppingcart Remove Button - Free Edition
+SystemName: ima9ines.Nop.ShoppingcartRemoveButton
+Version: 3.81
+SupportedVersions: 3.80
+Author: ima9ines, ima9ines.com
+DisplayOrder: 1
+FileName: ima9ines.Nop.ShoppingcartRemoveButton.dll

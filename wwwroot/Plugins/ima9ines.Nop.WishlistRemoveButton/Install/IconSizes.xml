@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+    <Item Text="ima9ines.Nop.WishlistRemoveButton.IconSize.Small">
+        <Value>32</Value>
+    </Item>
+    <Item Text="ima9ines.Nop.WishlistRemoveButton.IconSize.Medium">
+        <Value>48</Value>
+    </Item>
+    <Item Text="ima9ines.Nop.WishlistRemoveButton.IconSize.Large">
+        <Value>64</Value>
+    </Item>
+</Items>

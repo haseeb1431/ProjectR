@@ -1,0 +1,76 @@
+﻿@using ima9ines.Nop.Admin.Models
+@using ima9ines.Nop.Core.Plugins
+@using Nop.Web.Framework
+@model IPluginModel
+@Html.Partial("_MiscPluginSettings".GetAdminViewFor(), Model as IMiscPluginModel)
+<div class="form-group">
+    <div class="col-md-3">
+        @Html.OverrideStoreCheckboxFor(model => model.Theme_OverrideForStore, model => model.Theme, Model.ActiveStoreScopeConfiguration)
+        @Html.NopLabelFor(model => model.Theme)
+    </div>
+    <div class="col-md-9">
+        @Html.DropDownListFor(model => model.Theme, Model.Themes, new { @class = "form-control" })
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-md-3">
+        @Html.OverrideStoreCheckboxFor(model => model.WidgetZone_OverrideForStore, model => model.WidgetZone, Model.ActiveStoreScopeConfiguration)
+        @Html.NopLabelFor(model => model.WidgetZone)
+    </div>
+    <div class="col-md-9">
+        @if (Model.WidgetZone_Enabled)
+        {
+            @Html.DropDownListFor(model => model.WidgetZone, Model.WidgetZones, new { @class = "form-control" })
+        }
+        else
+        {
+            @Html.DropDownListFor(model => model.WidgetZone, Model.WidgetZones, new { @class = "form-control", @disabled = "disabled" })
+        }
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-md-3">
+        @Html.OverrideStoreCheckboxFor(model => model.CustomWidgetZone_OverrideForStore, model => model.CustomWidgetZone, Model.ActiveStoreScopeConfiguration)
+        @Html.NopLabelFor(model => model.CustomWidgetZone)
+    </div>
+    <div class="col-md-9">
+        @if (Model.CustomWidgetZone_Enabled)
+        {
+            @Html.EditorFor(model => model.CustomWidgetZone, new { htmlAttributes = new { @class = "form-control" } })
+        }
+        else
+        {
+            @Html.EditorFor(model => model.CustomWidgetZone, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+        }
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-md-3">
+        @Html.OverrideStoreCheckboxFor(model => model.PluginWidgetZones_OverrideForStore, model => model.PluginWidgetZones, Model.ActiveStoreScopeConfiguration)
+        @Html.NopLabelFor(model => model.PluginWidgetZones)
+    </div>
+    <div class="col-md-9">
+        @if (Model.PluginWidgetZones_Enabled)
+        {
+            @Html.EditorFor(model => model.PluginWidgetZones, new { htmlAttributes = new { @class = "form-control" } })
+        }
+        else
+        {
+            @Html.EditorFor(model => model.PluginWidgetZones, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+        }
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            @Html.Raw(Model.PluginWidgetZoneTagsJs);
+            $('#@Html.FieldIdFor(model => model.PluginWidgetZones)').tagEditor({
+                autocomplete: {
+                    delay: 0,
+                    position: { collision: 'flip' },
+                    source: widgetZoneTags
+                },
+                delimiter: ',',
+                placeholder: 'Enter widget zones ...'
+            });
+        });
+    </script>
+</div>

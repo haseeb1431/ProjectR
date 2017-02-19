@@ -1,0 +1,23 @@
+﻿@using ima9ines.Nop.Admin.Models
+@using ima9ines.Nop.Core.Plugins
+@using Nop.Web.Framework
+@model IPluginWithItemsModel
+@Html.Partial("_PluginSettings".GetAdminViewFor(), Model as IPluginModel)
+<div class="form-group">
+    <div class="col-md-3">
+        @Html.OverrideStoreCheckboxFor(model => model.TotalItems_OverrideForStore, model => model.TotalItems, Model.ActiveStoreScopeConfiguration)
+        @Html.NopLabelFor(model => model.TotalItems)
+    </div>
+    <div class="col-md-9">
+        @Html.EditorFor(model => model.TotalItems)
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-md-3">
+        @Html.OverrideStoreCheckboxFor(model => model.ResponsiveCarousel_OverrideForStore, model => model.ResponsiveCarousel, Model.ActiveStoreScopeConfiguration)
+        @Html.NopLabelFor(model => model.ResponsiveCarousel)
+    </div>
+    <div class="col-md-9">
+        @Html.EditorFor(model => model.ResponsiveCarousel)
+    </div>
+</div>

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Language Name="English">
+    <LocaleResource Name="ima9ines.Nop.Brand">
+        <Value>ima9ines</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.Plugins">
+        <Value>Plugins</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.Templates">
+        <Value>Templates</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.UpdatePlugin">
+        <Value>Update Plugin</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.UpdatePlugin.Settings">
+        <Value>Settings</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.UpdatePlugin.Resources">
+        <Value>Resources</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.AboutThisPlugin">
+        <Value>About this Plugin</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.LoadDefaultSettings">
+        <Value>Load Default Settings</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.CommonSettings">
+        <Value>Common Settings</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.PluginSettings">
+        <Value>Plugin Settings</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.PluginInfo">
+        <Value>Plugin Info</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.RateUrl">
+        <Value>Please rate</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.SuggestFeaturesUrl">
+        <Value>Suggest features</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.HelpUrl">
+        <Value>Help document</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.ReportBugsUrl">
+        <Value>Report bugs</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.BuyUsABeerUrl">
+        <Value>Buy us a beer :)</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.FreePluginsText">
+        <Value>Free Plugins</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.ProPluginsText">
+        <Value>Pro Plugins</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.FreeTemplatesText">
+        <Value>Free Templates</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.ProTemplatesText">
+        <Value>Pro Templates</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.FollowUs">
+        <Value>Follow us</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.NopCommerceProfileText">
+        <Value>on NopCommerce</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.FacebookProfileText">
+        <Value>on Facebook</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.TwitterProfileText">
+        <Value>on Twitter</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.GooglePlusProfileText">
+        <Value>on Google+</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.RssProfileText">
+        <Value>on RSS</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.InstalledPlugins">
+        <Value>Installed Plugins</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.Theme">
+        <Value>Theme</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.Theme.Hint">
+        <Value>Select a theme that you want to apply for this plugin</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.WidgetZones">
+        <Value>Widget Zones</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.WidgetZones.Hint">
+        <Value>Select widget zone(s) that you want to display</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.WidgetZone">
+        <Value>Widget Zone</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.WidgetZone.Hint">
+        <Value>Select a widget zone that you want to display</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.WidgetZone.Name">
+        <Value>Name</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.CustomWidgetZone">
+        <Value>Custom Widget Zone</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.CustomWidgetZone.Hint">
+        <Value>Enter a custom widget zone that you want to display</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.TotalItems">
+        <Value>Total Items</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.TotalItems.Hint">
+        <Value>Enter a number of items that you want to display</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.ResponsiveCarousel">
+        <Value>Responsive Carousel</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.ResponsiveCarousel.Hint">
+        <Value>Enable/disable responsive carousel</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.DeleteAllDataWhenUninstall">
+        <Value>Delete all data when Uninstall</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.DeleteAllDataWhenUninstall.Hint">
+        <Value>All plugin's data will be remove if this plugin uninstalled</Value>
+    </LocaleResource>
+</Language>

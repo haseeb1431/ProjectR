@@ -1,0 +1,39 @@
+﻿@using ima9ines.Nop.ShoppingcartRemoveButton.Web.Models
+@model DisplayWidgetModel
+@{
+    string imageUrl = string.Empty;
+    if (Model != null && Model.PictureModel != null && !string.IsNullOrEmpty(Model.PictureModel.ImageUrl))
+    {
+        imageUrl = Model.PictureModel.ImageUrl;
+    }
+
+    string iconSizeCssClass = "ima9ines-ico--small";
+    if (Model != null && !string.IsNullOrEmpty(Model.IconSizeCssClass))
+    {
+        iconSizeCssClass = Model.IconSizeCssClass;
+    }
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        var $removeButton = null,
+            imageUrl = '@imageUrl';
+        if (imageUrl) {
+            $removeButton = $('<img />');
+            $removeButton.addClass('ima9ines-ico @iconSizeCssClass');
+            $removeButton.attr('src', imageUrl);
+        } else {
+            $removeButton = $('<span />');
+            $removeButton.addClass('ima9ines-ico ima9ines-ico-delete @iconSizeCssClass');
+        }
+        $removeButton.attr('onclick', 'shoppingcart_removeFromCart(this)');
+
+        $removeButton.insertAfter($('input:checkbox[name=removefromcart]'));
+
+        $('input:checkbox[name=removefromcart]').hide();
+    });
+
+    function shoppingcart_removeFromCart(source) {
+        $(source).parent().find('input[name=removefromcart]').prop('checked', true);
+        $('input[name=updatecart]').click();
+    }
+</script>

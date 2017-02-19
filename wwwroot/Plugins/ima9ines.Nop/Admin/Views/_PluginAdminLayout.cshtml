@@ -1,0 +1,47 @@
+﻿@using ima9ines.Nop.Admin.Models
+@using ima9ines.Nop.Core.Plugins
+@using ima9ines.Nop.CorePlugin
+@using Nop.Web.Framework
+@using Nop.Web.Framework.UI
+@{
+    Layout = "";
+
+    Html.AddCssFileParts("/Styles/Ima9inesNopAdmin.min.css".GetPluginContentFor());
+
+    // Resources for tags input
+    Html.AppendCssFileParts("~/Administration/Content/tagEditor/jquery.tag-editor.css");
+
+    Html.AppendScriptParts("~/Administration/Scripts/tagEditor/jquery.tag-editor.min.js");
+    Html.AppendScriptParts("~/Administration/Scripts/tagEditor/jquery.caret.min.js");
+}
+<section class="ima9ines-nop-plugin ima9ines-nop-plugin__admin">
+    @Html.Partial("_MainNavBar".GetAdminViewFor())
+    @if (IsSectionDefined("toppane"))
+    {
+        @RenderSection("toppane")
+    }
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-1">
+                @if (IsSectionDefined("leftpane"))
+                {
+                    @RenderSection("leftpane")
+                }
+            </div>
+            <div class="col-md-9">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.Action("StoreScopeConfiguration", "Setting", new { area = "Admin" })
+                    @RenderBody()
+                }
+            </div>
+            <div class="col-md-2">
+                @if (IsSectionDefined("rightpane"))
+                {
+                    @RenderSection("rightpane")
+                }
+            </div>
+        </div>
+    </div>
+</section>

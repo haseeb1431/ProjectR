@@ -1,0 +1,2 @@
+DataProvider: sqlserver
+DataConnectionString: Data Source=SQL5026.myASP.NET;Initial Catalog=db_9fe9af_foriorderdb_1;Integrated Security=False;Persist Security Info=False;User ID=DB_9fe9af_foriorderdb_1_admin;Password=foriOrder@DB123

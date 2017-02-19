@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Language Name="English">
+    <LocaleResource Name="ima9ines.Nop.WishlistRemoveButton.Icon">
+        <Value>Remove Button Icon</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.WishlistRemoveButton.Icon.Hint">
+        <Value>Select a picture to set as remove button icon</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.WishlistRemoveButton.IconSize">
+        <Value>Icon Size</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.WishlistRemoveButton.IconSize.Hint">
+        <Value>Select a size for icon</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.WishlistRemoveButton.IconSize.Small">
+        <Value>Small (32x32)</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.WishlistRemoveButton.IconSize.Medium">
+        <Value>Medium (48x48)</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.WishlistRemoveButton.IconSize.Large">
+        <Value>Large (64x64)</Value>
+    </LocaleResource>
+</Language>

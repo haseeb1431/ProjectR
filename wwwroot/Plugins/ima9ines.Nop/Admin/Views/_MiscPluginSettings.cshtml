@@ -1,0 +1,12 @@
+﻿@using ima9ines.Nop.Admin.Models
+@using Nop.Web.Framework
+@model IMiscPluginModel
+<div class="form-group">
+    <div class="col-md-3">
+        @Html.OverrideStoreCheckboxFor(model => model.DeleteAllDataWhenUninstall_OverrideForStore, model => model.DeleteAllDataWhenUninstall, Model.ActiveStoreScopeConfiguration)
+        @Html.NopLabelFor(model => model.DeleteAllDataWhenUninstall)
+    </div>
+    <div class="col-md-9">
+        @Html.EditorFor(model => model.DeleteAllDataWhenUninstall)
+    </div>
+</div>

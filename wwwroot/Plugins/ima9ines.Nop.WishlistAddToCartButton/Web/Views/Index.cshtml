@@ -1,0 +1,42 @@
+﻿@using ima9ines.Nop.WishlistAddToCartButton.Web.Models
+@model DisplayWidgetModel
+@{
+    string imageUrl = string.Empty;
+    if (Model != null && Model.PictureModel != null && !string.IsNullOrEmpty(Model.PictureModel.ImageUrl))
+    {
+        imageUrl = Model.PictureModel.ImageUrl;
+    }
+
+    string iconSizeCssClass = "ima9ines-ico--small";
+    if (Model != null && !string.IsNullOrEmpty(Model.IconSizeCssClass))
+    {
+        iconSizeCssClass = Model.IconSizeCssClass;
+    }
+}
+<script type="text/javascript">
+    var wishlist_addToCartCheckboxSelector = 'input:checkbox[name=addtocart]';
+
+    $(document).ready(function () {
+        var $addToCartCheckbox = $(wishlist_addToCartCheckboxSelector),
+            $addToCartButton = null,
+            imageUrl = '@imageUrl';
+        if (imageUrl) {
+            $addToCartButton = $('<img />');
+            $addToCartButton.addClass('ima9ines-ico @iconSizeCssClass');
+            $addToCartButton.attr('src', imageUrl);
+        } else {
+            $addToCartButton = $('<span />');
+            $addToCartButton.addClass('ima9ines-ico ima9ines-ico-add @iconSizeCssClass');
+        }
+        $addToCartButton.attr('onclick', 'wishlist_addToCart(this)');
+
+        $addToCartButton.insertAfter($addToCartCheckbox);
+
+        $addToCartCheckbox.hide();
+    });
+
+    function wishlist_addToCart(source) {
+        $(source).parent().find(wishlist_addToCartCheckboxSelector).prop('checked', true);
+        $('input[name=addtocartbutton]').click();
+    }
+</script>

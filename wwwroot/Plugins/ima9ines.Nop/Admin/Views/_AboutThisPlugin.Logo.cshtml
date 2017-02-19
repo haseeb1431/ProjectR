@@ -1,0 +1,13 @@
+﻿@using ima9ines.Nop.Admin.Models
+@model AboutThisPlugin
+@{
+    string pluginUrl = string.Empty;
+    string pluginLogo = string.Empty;
+
+    if (Model != null)
+    {
+        pluginUrl = Model.PluginUri;
+        pluginLogo = Model.PluginLogo;
+    }
+}
+<a class="pull-right" href="@pluginUrl" target="_blank"><img src="@pluginLogo" alt="" /></a>

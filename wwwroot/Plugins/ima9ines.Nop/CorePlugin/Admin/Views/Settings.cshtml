@@ -1,0 +1,23 @@
+﻿@using ima9ines.Nop.Admin.Models
+@using ima9ines.Nop.Core.Plugins
+@using ima9ines.Nop.CorePlugin.Admin.Models
+@using Nop.Web.Framework
+@model ConfigurationModel
+@{
+    Layout = "_PluginAdminLayout".GetAdminViewFor();
+
+    AboutThisPlugin aboutPluginModel = Model.AboutThisPlugin;
+}
+@section leftpane{ @Html.Partial("_AboutThisPlugin.Logo".GetAdminViewFor(), aboutPluginModel) }
+@section rightpane{ @Html.Partial("_AboutThisPlugin.Info.ListGroup".GetAdminViewFor(), aboutPluginModel) }
+<div class="panel panel-default ima9ines-nop-plugin__settings">
+    <div class="panel-heading">
+        <h3 class="panel-title">@T("ima9ines.Nop.PluginSettings")</h3>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            @Html.Partial("_MiscPluginSettings".GetAdminViewFor(), Model as IMiscPluginModel)
+            @Html.Partial("_PluginActions".GetAdminViewFor())
+        </div>
+    </div>
+</div>

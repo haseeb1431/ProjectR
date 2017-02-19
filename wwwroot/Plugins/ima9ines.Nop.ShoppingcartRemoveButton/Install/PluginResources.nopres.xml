@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Language Name="English">
+    <LocaleResource Name="ima9ines.Nop.ShoppingcartRemoveButton.Icon">
+        <Value>Remove Button Icon</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.ShoppingcartRemoveButton.Icon.Hint">
+        <Value>Select a picture to set as remove button icon</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.ShoppingcartRemoveButton.IconSize">
+        <Value>Icon Size</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.ShoppingcartRemoveButton.IconSize.Hint">
+        <Value>Select a size for icon</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.ShoppingcartRemoveButton.IconSize.Small">
+        <Value>Small (32x32)</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.ShoppingcartRemoveButton.IconSize.Medium">
+        <Value>Medium (48x48)</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.ShoppingcartRemoveButton.IconSize.Large">
+        <Value>Large (64x64)</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.ShoppingcartRemoveButton.ShowConfirmMessage">
+        <Value>Show confirm message</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.ShoppingcartRemoveButton.ShowConfirmMessage.Hint">
+        <Value>Turn on/off to show/hide confirm message</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.ShoppingcartRemoveButton.ConfirmMessage">
+        <Value>Confirm message</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.ShoppingcartRemoveButton.ConfirmMessage.Hint">
+        <Value>Confirm message will show when click on remove button</Value>
+    </LocaleResource>
+</Language>

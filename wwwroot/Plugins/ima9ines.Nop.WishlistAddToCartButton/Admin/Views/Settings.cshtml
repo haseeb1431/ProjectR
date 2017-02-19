@@ -1,0 +1,38 @@
+﻿@using ima9ines.Nop.Admin.Models
+@using ima9ines.Nop.Core.Plugins
+@using ima9ines.Nop.WishlistAddToCartButton.Admin.Models
+@using Nop.Web.Framework
+@model ConfigurationModel
+@{ Layout = "_PluginAdminLayout".GetAdminViewFor(); }
+@section leftpane{ @Html.Partial("_AboutThisPlugin.Logo".GetAdminViewFor(), Model.AboutThisPlugin) }
+@section rightpane{ @Html.Partial("_AboutThisPlugin.Info.ListGroup".GetAdminViewFor(), Model.AboutThisPlugin) }
+<div class="panel panel-default ima9ines-nop-plugin__settings">
+    <div class="panel-heading">
+        <h3 class="panel-title">@T("ima9ines.Nop.PluginSettings")</h3>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            @Html.Partial("_PluginSettings".GetAdminViewFor(), Model as IPluginModel)
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.OverrideStoreCheckboxFor(model => model.PictureId_OverrideForStore, model => model.PictureId, Model.ActiveStoreScopeConfiguration)
+                    @Html.NopLabelFor(model => model.PictureId)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.PictureId)
+                    @Html.ValidationMessageFor(model => model.PictureId)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.OverrideStoreCheckboxFor(model => model.IconSize_OverrideForStore, model => model.IconSize, Model.ActiveStoreScopeConfiguration)
+                    @Html.NopLabelFor(model => model.IconSize)
+                </div>
+                <div class="col-md-9">
+                    @Html.DropDownListFor(model => model.IconSize, Model.IconSizes, new { @class = "form-control" })
+                </div>
+            </div>
+            @Html.Partial("_PluginActions".GetAdminViewFor())
+        </div>
+    </div>
+</div>

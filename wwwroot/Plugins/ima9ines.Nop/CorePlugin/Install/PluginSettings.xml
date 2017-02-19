@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+    <Setting Key="ima9ines.Nop.OwnerWebSite">
+        <Value>http://ima9ines.com</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.PluginLogo">
+        <Value>Images/Logo-96x96.png</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.FreePluginsUrl">
+        <Value>http://ima9ines.com/free-plugins</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.ProPluginsUrl">
+        <Value>http://ima9ines.com/pro-plugins</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.FreeTemplatesUrl">
+        <Value>http://ima9ines.com/free-templates</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.ProTemplatesUrl">
+        <Value>http://ima9ines.com/pro-templates</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.RssUrl">
+        <Value>http://ima9ines.com/news/rss/1</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.FacebookUrl">
+        <Value>https://www.facebook.com/ima9ines</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.GooglePlusUrl">
+        <Value>https://plus.google.com/u/0/+AnhTuanDo-ima9ines</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.TwitterUrl">
+        <Value>https://twitter.com/ima9ines</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.NopCommerceProfileUrl">
+        <Value>http://www.nopcommerce.com/profile.aspx?userid=61573</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.PluginSeName">
+        <Value>core-plugin/</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.RateUri">
+        <Value>http://ima9ines.com/core-plugin/</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.SuggestFeaturesUri">
+        <Value>http://ima9ines.com/core-plugin/</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.HelpUri">
+        <Value>http://ima9ines.com/how-to-use-core-plugin</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.ReportBugsUri">
+        <Value>http://ima9ines.com/core-plugin/</Value>
+    </Setting>
+</Settings>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+    <Setting Key="ima9ines.Nop.WishlistRemoveButton.PluginSeName">
+        <Value>wishlist-remove-button/</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.WishlistRemoveButton.RateUri">
+        <Value>http://www.nopcommerce.com/p/1718/wishlist-remove-button-free-ima9inescom.aspx</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.WishlistRemoveButton.SuggestFeaturesUri">
+        <Value>http://ima9ines.com/wishlist-remove-button</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.WishlistRemoveButton.HelpUri">
+        <Value>http://ima9ines.com/how-to-use-wishlist-remove-button-plugin</Value>
+    </Setting>
+    <Setting Key="ima9ines.Nop.WishlistRemoveButton.ReportBugsUri">
+        <Value>http://ima9ines.com/wishlist-remove-button</Value>
+    </Setting>
+</Settings>

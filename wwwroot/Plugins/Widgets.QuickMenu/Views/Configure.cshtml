@@ -1,0 +1,648 @@
+﻿@{
+    Layout = "";
+}
+@model Nop.Plugin.Widgets.QuickMenu.Models.QuickMenuModel
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI;
+@using (Html.BeginForm())
+{
+    <div class="content-header clearfix">
+        <div class="pull-right">
+            <button type="submit" name="save" class="btn bg-blue">
+                <i class="fa fa-floppy-o"></i>
+                @T("Admin.Common.Save")
+            </button>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="form-horizontal">
+            <div id="menusettings-edit" class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    @Html.RenderBootstrapTabHeader("tab-general", @T("Plugins.Widgets.QuickMenu.General"), true)
+                    @Html.RenderBootstrapTabHeader("tab-Product", @T("Plugins.Widgets.QuickMenu.Product"))
+                    @Html.RenderBootstrapTabHeader("tab-Topic", @T("Plugins.Widgets.QuickMenu.Topic"))
+                    @Html.RenderBootstrapTabHeader("tab-Other", @T("Plugins.Widgets.QuickMenu.Other"))
+                </ul>
+                <div class="tab-content">
+                    @Html.RenderBootstrapTabContent("tab-general", @TabGeneral(), true)
+                    @Html.RenderBootstrapTabContent("tab-Product", @TabProduct())
+                    @Html.RenderBootstrapTabContent("tab-Topic", @TabTopic())
+                    @Html.RenderBootstrapTabContent("tab-Other", @TabOther())
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            toggleHomePageLink();
+            toggleCategories();
+            toggleCategoriesPicture();
+            toggleManufacturers();
+            toggleManufacturersPicture();
+            toggleNewProducts();
+            toggleMyAccount();
+            toggleBlog();
+            toggleForum();
+            toggleTopic1();
+            toggleTopic2();
+            toggleTopic3();
+            toggleTopic4();
+            toggleContactUsLink();
+            toggleSearchLink();
+
+            $("#@Html.FieldIdFor(model => model.HomePageLink)").change(toggleHomePageLink);
+            $("#@Html.FieldIdFor(model => model.Categories)").change(toggleCategories);
+            $("#@Html.FieldIdFor(model => model.Categories_withPicture)").change(toggleCategoriesPicture);
+            $("#@Html.FieldIdFor(model => model.Manufacturers)").change(toggleManufacturers);
+            $("#@Html.FieldIdFor(model => model.Manufacturers_withPicture)").change(toggleManufacturersPicture);
+            $("#@Html.FieldIdFor(model => model.NewProductsLink)").change(toggleNewProducts);
+            $("#@Html.FieldIdFor(model => model.MyAccountLink)").change(toggleMyAccount);
+            $("#@Html.FieldIdFor(model => model.BlogLink)").change(toggleBlog);
+            $("#@Html.FieldIdFor(model => model.ForumLink)").change(toggleForum);
+            $("#@Html.FieldIdFor(model => model.TopicLink1)").change(toggleTopic1);
+            $("#@Html.FieldIdFor(model => model.TopicLink2)").change(toggleTopic2);
+            $("#@Html.FieldIdFor(model => model.TopicLink3)").change(toggleTopic3);
+            $("#@Html.FieldIdFor(model => model.TopicLink4)").change(toggleTopic4);
+            $("#@Html.FieldIdFor(model => model.ContactUsLink)").change(toggleContactUsLink);
+            $("#@Html.FieldIdFor(model => model.SearchLink)").change(toggleSearchLink);
+
+            function toggleHomePageLink() {
+                if ($('#@Html.FieldIdFor(model => model.HomePageLink)').is(':checked')) {
+                    $('#pnlHomePageLink').show();
+                } else {
+                    $('#pnlHomePageLink').hide();
+                }
+            }
+            function toggleContactUsLink() {
+                if ($('#@Html.FieldIdFor(model => model.ContactUsLink)').is(':checked')) {
+                    $('#pnlContactUsLink').show();
+                } else {
+                    $('#pnlContactUsLink').hide();
+                }
+            }
+
+            function toggleSearchLink() {
+                if ($('#@Html.FieldIdFor(model => model.SearchLink)').is(':checked')) {
+                    $('#pnlSearchLink').show();
+                } else {
+                    $('#pnlSearchLink').hide();
+                }
+            }
+
+            function toggleCategories() {
+                if ($('#@Html.FieldIdFor(model => model.Categories)').is(':checked')) {
+                    $('#pnlCategories').show();
+                    $('#pnlCategoriesWide').show();
+                    $('#pnlCategoriesTopMenu').show();
+                    $('#pnlCategoriesPicture').show();
+                    toggleCategoriesPicture();
+                } else {
+                    $('#pnlCategories').hide();
+                    $('#pnlCategoriesWide').hide();
+                    $('#pnlCategoriesTopMenu').hide();
+                    $('#pnlCategoriesPicture').hide();
+                    $('#pnlCategoriesPictureSize').hide();
+                }
+            }
+
+            function toggleCategoriesPicture() {
+                if ($('#@Html.FieldIdFor(model => model.Categories_withPicture)').is(':checked')) {
+                    $('#pnlCategoriesPictureSize').show();
+                } else {
+                    $('#pnlCategoriesPictureSize').hide();
+                }
+            }
+
+            function toggleManufacturers() {
+                if ($('#@Html.FieldIdFor(model => model.Manufacturers)').is(':checked')) {
+                    $('#pnlManufacturers').show();
+                    $('#pnlManufacturersPicture').show();
+                    toggleManufacturersPicture();
+                } else {
+                    $('#pnlManufacturers').hide();
+                    $('#pnlManufacturersPicture').hide();
+                    $('#pnlManufacturersPictureSize').hide();
+                }
+            }
+            function toggleManufacturersPicture() {
+                if ($('#@Html.FieldIdFor(model => model.Manufacturers_withPicture)').is(':checked')) {
+                    $('#pnlManufacturersPictureSize').show();
+                } else {
+                    $('#pnlManufacturersPictureSize').hide();
+                }
+            }
+
+            function toggleNewProducts() {
+                if ($('#@Html.FieldIdFor(model => model.NewProductsLink)').is(':checked')) {
+                    $('#pnlNewProducts').show();
+                } else {
+                    $('#pnlNewProducts').hide();
+                }
+            }
+
+            function toggleMyAccount() {
+                if ($('#@Html.FieldIdFor(model => model.MyAccountLink)').is(':checked')) {
+                    $('#pnlMyAccount').show();
+                } else {
+                    $('#pnlMyAccount').hide();
+                }
+            }
+
+            function toggleBlog() {
+                if ($('#@Html.FieldIdFor(model => model.BlogLink)').is(':checked')) {
+                    $('#pnlBlogLink').show();
+                } else {
+                    $('#pnlBlogLink').hide();
+                }
+            }
+            function toggleForum() {
+                if ($('#@Html.FieldIdFor(model => model.ForumLink)').is(':checked')) {
+                    $('#pnlForumLink').show();
+                } else {
+                    $('#pnlForumLink').hide();
+                }
+            }
+
+
+            function toggleTopic1() {
+                if ($('#@Html.FieldIdFor(model => model.TopicLink1)').is(':checked')) {
+                    $('#pnlTopicLink1SystemName').show();
+                    $('#pnlTopicLink1OrderId').show();
+                    $('#pnlTopicLink1ContentLink').show();
+                } else {
+                    $('#pnlTopicLink1SystemName').hide();
+                    $('#pnlTopicLink1OrderId').hide();
+                    $('#pnlTopicLink1ContentLink').hide();
+                }
+            }
+            function toggleTopic2() {
+                if ($('#@Html.FieldIdFor(model => model.TopicLink2)').is(':checked')) {
+                    $('#pnlTopicLink2SystemName').show();
+                    $('#pnlTopicLink2OrderId').show();
+                    $('#pnlTopicLink2ContentLink').show();
+                } else {
+                    $('#pnlTopicLink2SystemName').hide();
+                    $('#pnlTopicLink2OrderId').hide();
+                    $('#pnlTopicLink2ContentLink').hide();
+                }
+            }
+            function toggleTopic3() {
+                if ($('#@Html.FieldIdFor(model => model.TopicLink3)').is(':checked')) {
+                    $('#pnlTopicLink3SystemName').show();
+                    $('#pnlTopicLink3OrderId').show();
+                    $('#pnlTopicLink3ContentLink').show();
+                } else {
+                    $('#pnlTopicLink3SystemName').hide();
+                    $('#pnlTopicLink3OrderId').hide();
+                    $('#pnlTopicLink3ContentLink').hide();
+                }
+            }
+            function toggleTopic4() {
+                if ($('#@Html.FieldIdFor(model => model.TopicLink4)').is(':checked')) {
+                    $('#pnlTopicLink4SystemName').show();
+                    $('#pnlTopicLink4OrderId').show();
+                    $('#pnlTopicLink4ContentLink').show();
+                } else {
+                    $('#pnlTopicLink4SystemName').hide();
+                    $('#pnlTopicLink4OrderId').hide();
+                    $('#pnlTopicLink4ContentLink').hide();
+                }
+            }
+
+        });
+    </script>
+
+    @Html.AntiForgeryToken()
+
+
+
+    @helper TabGeneral()
+    {
+        <div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.Enabled)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Enabled)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.Enabled.hint")</em>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.EnabledClick)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.EnabledClick)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.EnabledClick.hint")</em>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.MenuColor)
+                </div>
+                <div class="col-md-9">
+                    @Html.NopDropDownListFor(model => model.MenuColor, Model.MenuColors)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.MenuColor.hint")</em>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.OverrideColor)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.OverrideColor)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.StandardMobileView)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.StandardMobileView)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.HomePageLink)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.HomePageLink)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.HomePageLink.hint")</em>
+                </div>
+            </div>
+
+            <div class="form-group" id="pnlHomePageLink">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.HomePageLink_OrderId)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.HomePageLink_OrderId)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.MyAccountLink)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.MyAccountLink)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.MyAccountLink.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlMyAccount">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.MyAccount_OrderId)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.MyAccount_OrderId)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.BlogLink)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.BlogLink)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.BlogLink.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlBlogLink">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.Blog_OrderId)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Blog_OrderId)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.ForumLink)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.ForumLink)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.ForumLink.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlForumLink">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.Forum_OrderId)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Forum_OrderId)
+                </div>
+            </div>
+        </div>
+
+}
+
+    @helper TabProduct()
+    {
+
+        <div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.Categories)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Categories)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.Categories.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlCategoriesWide">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.CategoriesWide)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.CategoriesWide)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.CategoriesWide.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlCategories">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.Categories_OrderId)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Categories_OrderId)
+                </div>
+            </div>
+
+            <div class="form-group" id="pnlCategoriesPicture">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.Categories_withPicture)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Categories_withPicture)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.Categories_withPicture.hint")</em>
+                </div>
+            </div>
+
+            <div class="form-group" id="pnlCategoriesPictureSize">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.Categories_PictureSize)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Categories_PictureSize)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.Categories_PictureSize.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlCategoriesTopMenu">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.CategoriesTopMenu)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.CategoriesTopMenu)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.CategoriesTopMenu.hint")</em>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.Manufacturers)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Manufacturers)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.Manufacturers.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlManufacturers">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.Manufacturers_OrderId)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Manufacturers_OrderId)
+                </div>
+            </div>
+            <div class="form-group" id="pnlManufacturersPicture">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.Manufacturers_withPicture)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Manufacturers_withPicture)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.Manufacturers_withPicture.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlManufacturersPictureSize">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.Manufacturers_PictureSize)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Manufacturers_PictureSize)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.Manufacturers_PictureSize.hint")</em>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.NewProductsLink)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.NewProductsLink)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.NewProductsLink.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlNewProducts">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.NewProducts_OrderId)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.NewProducts_OrderId)
+                </div>
+            </div>
+        </div>
+}
+
+    @helper TabTopic()
+    {
+        <div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.TopicLink1)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.TopicLink1)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.TopicLink1.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlTopicLink1SystemName">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.TopicLink1_SystemName)
+                </div>
+                <div class="col-md-9">
+                    @*@Html.EditorFor(model => model.TopicLink1_SystemName)*@
+                    @Html.DropDownListFor(model => model.TopicLink1_SystemName, Model.Topics)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.TopicLink1_SystemName.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlTopicLink1OrderId" >
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.TopicLink1_OrderId)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.TopicLink1_OrderId)
+                </div>
+            </div>
+            <div class="form-group" id="pnlTopicLink1ContentLink" >
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.TopicLink1ContentLink)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.TopicLink1ContentLink)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.TopicLink1ContentLink.hint")</em>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.TopicLink2)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.TopicLink2)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.TopicLink2.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlTopicLink2SystemName" >
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.TopicLink2_SystemName)
+                </div>
+                <div class="col-md-9">
+                    @*@Html.EditorFor(model => model.TopicLink2_SystemName)*@
+                    @Html.DropDownListFor(model => model.TopicLink2_SystemName, Model.Topics)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.TopicLink2_SystemName.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlTopicLink2OrderId">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.TopicLink2_OrderId)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.TopicLink2_OrderId)
+                </div>
+            </div>
+            <div class="form-group" id="pnlTopicLink2ContentLink">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.TopicLink2ContentLink)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.TopicLink2ContentLink)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.TopicLink2ContentLink.hint")</em>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.TopicLink3)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.TopicLink3)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.TopicLink3.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlTopicLink3SystemName">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.TopicLink3_SystemName)
+                </div>
+                <div class="col-md-9">
+                    @Html.DropDownListFor(model => model.TopicLink3_SystemName, Model.Topics)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.TopicLink3_SystemName.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlTopicLink3OrderId">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.TopicLink3_OrderId)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.TopicLink3_OrderId)
+                </div>
+            </div>
+            <div class="form-group" id="pnlTopicLink3ContentLink">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.TopicLink3ContentLink)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.TopicLink3ContentLink)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.TopicLink3ContentLink.hint")</em>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.TopicLink4)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.TopicLink4)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.TopicLink4.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlTopicLink4SystemName">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.TopicLink4_SystemName)
+                </div>
+                <div class="col-md-9">
+                    @Html.DropDownListFor(model => model.TopicLink4_SystemName, Model.Topics)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.TopicLink3_SystemName.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlTopicLink4OrderId">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.TopicLink4_OrderId)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.TopicLink4_OrderId)
+                </div>
+            </div>
+            <div class="form-group" id="pnlTopicLink4ContentLink">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.TopicLink4ContentLink)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.TopicLink4ContentLink)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.TopicLink4ContentLink.hint")</em>
+                </div>
+            </div>
+
+        </div>
+}
+
+    @helper TabOther()
+    {
+        <div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.SearchLink)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.SearchLink)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.SearchLink.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlSearchLink">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.Search_OrderId)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Search_OrderId)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.ContactUsLink)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.ContactUsLink)
+                    <br /><em>@T("Plugins.Widgets.QuickMenu.ContactUsLink.hint")</em>
+                </div>
+            </div>
+            <div class="form-group" id="pnlContactUsLink">
+                <div class="col-md-3">
+                    @Html.NopLabelFor(model => model.ContactUs_OrderId)
+                </div>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.ContactUs_OrderId)
+                </div>
+            </div>
+            
+        </div>
+}
+
+}

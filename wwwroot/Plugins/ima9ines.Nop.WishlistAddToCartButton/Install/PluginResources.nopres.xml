@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Language Name="English">
+    <LocaleResource Name="ima9ines.Nop.WishlistAddToCartButton.Icon">
+        <Value>Add to Cart Button Icon</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.WishlistAddToCartButton.Icon.Hint">
+        <Value>Select a picture to set as add to cart button icon</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.WishlistAddToCartButton.IconSize">
+        <Value>Icon Size</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.WishlistAddToCartButton.IconSize.Hint">
+        <Value>Select a size for icon</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.WishlistAddToCartButton.IconSize.Small">
+        <Value>Small (32x32)</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.WishlistAddToCartButton.IconSize.Medium">
+        <Value>Medium (48x48)</Value>
+    </LocaleResource>
+    <LocaleResource Name="ima9ines.Nop.WishlistAddToCartButton.IconSize.Large">
+        <Value>Large (64x64)</Value>
+    </LocaleResource>
+</Language>
